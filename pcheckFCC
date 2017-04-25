@@ -1,0 +1,26 @@
+
+function palindrome(str) {
+  //changed string to lower case so it is not case sensitive
+  str=str.toLowerCase();
+  
+  for(var i=0;i<str.length;i++) {
+    str=str.replace(' ','');//taking out all special characters is there a more 
+    str=str.replace(',','');// succinct way of doing this?
+    str=str.replace('.', '');
+    str=str.replace('/', '');
+    str=str.replace('(', '');
+    str=str.replace(')', '');
+    str=str.replace(':', '');
+    str=str.replace('-','');
+    str=str.replace('_', '');
+  }
+  //Loop to replace special characters without using regular expressions
+  var copy = str.split('').reverse().join('');
+  //creates a copy of string and reverses it
+  if(copy == str){
+    return true;
+  }
+ else {
+    return false;
+ } 
+}
